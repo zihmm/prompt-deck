@@ -1,0 +1,65 @@
+@use "sass:map";
+
+/*
+ * Get colors from $colors map
+ * Accessing subsets with dot notations (ex. background.grey)
+ */
+@function get-color($key, $map: $colors)
+{
+    $dotIndex: str-index($key, '.');
+
+    // Try to access subset directly
+    @if(type-of(map.get($map, $key)) == 'map')
+    {
+        @warn "Color #{$key} is a map in map;";
+        @return null;
+    }
+
+    // With subset (backgrounds.grey)
+    @if ($dotIndex != null)
+    {
+        $subset: str-slice($key, 0, $dotIndex - 1);
+        $color: str-slice($key, str-length($subset) + 2, str-length($key));
+
+        @if(map.has-key($map, $subset, $color) == false)
+        {
+            @warn "Color and/or subset not found #{$key} in map.";
+        }
+
+        @return map.get($map, $subset, $color);
+    }
+
+    // No subset
+    @if(map.has-key($map, $key) == false)
+    {
+        @warn "Color #{$key} not found in $colors";
+    }
+
+    @return map.get($map, $key);
+}
+
+/*
+ * Get font from map
+ */
+@function get-font-family($name, $map: $fonts)
+{
+    @if(map.has-key($map, $name) == null)
+    {
+        @warn "Font #{$name} not foudn in map"
+    }
+
+    @return unquote(map.get($map, $name));
+}
+
+/*
+ * Get font size
+ */
+@function get-font-size($name, $map: $font-sizes)
+{
+    @if(map.has-key($map, $name) == null)
+    {
+        @warn "Fontsize #{$name} not foudn in map"
+    }
+
+    @return map.get($map, $name);
+}
