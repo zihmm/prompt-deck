@@ -3,7 +3,17 @@
     display: none !important;
 }
 
+.invisible
+{
+    visibility: hidden !important;
+}
+
 .italic
 {
     font-style: italic !important;
+}
+
+.red
+{
+    color: get-color('secondary')
 }

@@ -12,5 +12,8 @@
         "sass": "^1.75.0",
         "vite": "^5.0",
         "vite-plugin-sass-glob-import": "^3.0.2"
+    },
+    "dependencies": {
+        "countdown-tmr": "^1.0.0"
     }
 }
