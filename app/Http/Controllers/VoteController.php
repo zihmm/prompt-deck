@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-class SelectController extends Controller
+class VoteController extends Controller
 {
 	public function index()
 	{
-		return view('select');
+		return view('vote');
 	}
 }

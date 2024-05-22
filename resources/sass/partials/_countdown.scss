@@ -1,45 +1,53 @@
-#countdown
+.countdown-wrapper
 {
     position: relative;
-    display: grid;
-    grid-template-columns: 50% 50%;
+    display: block;
 
-    width: 400px;
+    height: 70px;
 
-    font-family: get-font-family('quote');
-
-    .countdown__days,
-    .countdown__hours
+    #countdown
     {
-        display: none !important;
-    }
+        position: relative;
+        display: grid;
+        grid-template-columns: 50% 50%;
 
-    .countdown__num
-    {
-        display: flex;
-        align-items: center;
+        width: 400px;
 
-        span
+        font-family: get-font-family('quote');
+
+        .countdown__days,
+        .countdown__hours
         {
-            display: inline-block;
-            font-size: 52px;
-            padding-right: 10px;
+            display: none !important;
         }
 
-        p
+        .countdown__num
         {
-            display: inline-block;
-            font-family: get-font-family('round');
-            font-size: 15px;
-            text-transform: uppercase;
+            display: flex;
+            align-items: center;
+
+            span
+            {
+                display: inline-block;
+                font-size: 52px;
+                padding-right: 10px;
+            }
+
+            p
+            {
+                display: inline-block;
+                font-family: get-font-family('round');
+                font-size: 15px;
+                text-transform: uppercase;
+            }
         }
     }
-}
 
-.done
-{
-    font-family: get-font-family('quote');
-    font-size: 40px;
-    color: get-color('secondary');
-    font-weight: 800;
+    .done
+    {
+        font-family: get-font-family('quote');
+        font-size: 40px;
+        color: get-color('secondary');
+        font-weight: 800;
+    }
 }

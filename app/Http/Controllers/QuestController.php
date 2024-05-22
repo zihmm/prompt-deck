@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-class RoundsController extends Controller
+class QuestController extends Controller
 {
 	public function index()
 	{
-		return view('rounds');
+		return view('quest');
 	}
 }

@@ -1,15 +1,15 @@
 @extends('foundation/layout', [
-	'viewName' => 'rounds'
+	'viewName' => 'quest'
 ])
 
 @section('main')
-	<div class="label">Round <span class="red">01</span></div>
+	<div class="label">@lang('round') <span class="red">01</span></div>
 	<h1>Feuerspeiende Pinguine in einem Superheldenkostüm in einer tropischen Umgebung</h1>
 	<div class="countdown-wrapper">
 		<button id="start-countdown">
-			<span>Lets go</span>
+			<span>@lang('button_start')</span>
 		</button>
 		<div id="countdown"></div>
-		<div class="done hide">Hands up!</div>
+		<a href="/vote" class="done hide">@lang('time_out') →</a>
 	</div>
 @endsection

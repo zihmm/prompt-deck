@@ -4,11 +4,24 @@ html, body
     color: white;
 }
 
+a
+{
+    text-decoration: none;
+}
+
 #logo
 {
     position: fixed;
     top: 30px;
     right: 40px;
+
+    transition: all 200ms ease-out;
+    z-index: 10;
+
+    &:hover
+    {
+        transform: rotate(25deg);
+    }
 }
 
 #app
@@ -54,15 +67,6 @@ main
 
         width: 90%;
 
-        margin: 25px 0 35px;
+        margin: 25px 0 55px;
     }
-}
-
-.countdown-wrapper
-{
-    position: relative;
-    display: block;
-
-    height: 70px;
-
 }
