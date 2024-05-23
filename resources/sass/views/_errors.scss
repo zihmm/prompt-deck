@@ -1,0 +1,15 @@
+#app[data-view="error"]
+{
+    main {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        p
+        {
+            font-family: get-font-family('quote');
+            font-size: 40px;
+            color: get-color('red')
+        }
+    }
+}

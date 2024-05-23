@@ -7,4 +7,4 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', [QuestController::class, 'index']);
 
 Route::get('/vote', [VoteController::class, 'index']);
-Route::post('/vote', [VoteController::class, 'store']);
+Route::post('/vote', [VoteController::class, 'store'])->name('vote.post');

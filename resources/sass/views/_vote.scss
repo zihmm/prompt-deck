@@ -5,6 +5,9 @@
         width: 85%;
         height: 100vh;
 
+        display: grid;
+        grid-template-rows: 220px auto;
+
         #quest-review
         {
             display: flex;
@@ -24,9 +27,13 @@
 
         #figures
         {
+            position: relative;
             display: flex;
+
             justify-content: center;
-            align-items: center;
+            align-items: flex-start;
+
+            z-index: 11;
 
             .figures-container
             {
@@ -42,59 +49,74 @@
                 }
             }
 
-            nav#vote
+            a.vote
             {
                 position: absolute;
-                display: flex;
+                display: block;
 
-                width: 160px;
-                background: white;
-                border-radius: 100px;
+                top: 20px;
+                left: 20px;
 
-                a
+                width: 55px;
+                height: 55px;
+
+                border-radius: 100%;
+
+                background-color: white;
+                border: 1px solid get-color('grey');
+
+                transition: transform 200ms;
+
+                &:hover
                 {
-                    position: relative;
-                    display: flex;
-                    width: 80px;
-                    height: 65px;
-                    justify-content: center;
-
-                    img
-                    {
-                        width: 30px;
-                    }
-
-                    &.vote-right
-                    {
-                        border-top-right-radius: 100px;
-                        border-bottom-right-radius: 100px;
-                    }
-
-                    &.vote-left
-                    {
-                        border-top-left-radius: 100px;
-                        border-bottom-left-radius: 100px;
-                    }
-                }
-
-                a:first-of-type:after
-                {
-                    position: absolute;
-                    display: block;
-
-                    height: 35px;
-                    width: 1px;
-                    top: 15px;
-                    right: 0;
-
-                    background-color: get-color('grey');
-
                     content: '';
-                }
 
-                a:hover
+                    background-repeat: no-repeat;
+                    background-position: center center;
+                    background-image: url('../icons/accept-green.svg');
+
+                    border: 1px solid darken(get-color('grey'), 15);
+
+                    transform: scale(1.2);
+                }
+            }
+
+            figure.right
+            {
+                a.vote
                 {
-                    background-color: get-color('green');
+                    left: auto;
+                    right: 20px;
+
+                    background-color: get-color('secondary');
+                    border: 0;
+
+                    &:hover
+                    {
+                        background-image: url('../icons/accept-white.svg');
+                    }
+                }
+            }
+        }
+
+        &.done
+        {
+            grid-template-rows: 100%;
+
+            #quest-review
+            {
+                display: none;
+            }
+
+            #figures
+            {
+                align-items: center;
+                z-index: 0;
+
+                p
+                {
+                    font-family: get-font-family('quote');
+                    font-size: 40px;
                 }
             }
         }

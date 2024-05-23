@@ -1,5 +1,7 @@
 {
     "round": "Round",
-    "time_out": "Hands away",
-    "button_start": "Lets go"
+    "time_out": "Hands up",
+    "button_start": "Lets go",
+    "thank_you" : "Thank you \uD83D\uDC4F\uD83C\uDFFB",
+    "no_more_rounds_available": "No more rounds available ✋\uD83C\uDFFB"
 }

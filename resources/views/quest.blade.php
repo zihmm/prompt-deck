@@ -3,8 +3,8 @@
 ])
 
 @section('main')
-	<div class="label">@lang('round') <span class="red">01</span></div>
-	<h1>Feuerspeiende Pinguine in einem Superheldenkostüm in einer tropischen Umgebung</h1>
+	<div class="label">@lang('round') <span class="red">{{ $round->getName() }}</span></div>
+	<h1>{{ $round->prompt }}</h1>
 	<div class="countdown-wrapper">
 		<button id="start-countdown">
 			<span>@lang('button_start')</span>
