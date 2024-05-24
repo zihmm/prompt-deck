@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Enums\ActorPositionEnum;
-use App\Services\BattleListService;
+use App\Services\RoundService;
 use Illuminate\Http\Request;
 use Illuminate\View\View;
 
@@ -11,21 +11,23 @@ class VoteController extends Controller
 {
 	public function __construct(
 		protected Request $request,
-		protected BattleListService $listService
+		protected RoundService $roundService
 	) { }
 
 	public function index(): View
 	{
 		return view('vote', [
-			'round' => $this->listService->getCurrentRound()
+			'round' => $this->roundService->current()
 		]);
 	}
 
 	public function store(): array
 	{
-		$this->listService->setWinner(
-			$this->listService->getCurrentRound(),
-			ActorPositionEnum::{ucfirst($this->request->get('position'))}
+		$position = ActorPositionEnum::{ucfirst($this->request->get('position'))};
+
+		$this->roundService->finish(
+			round: $this->roundService->current(),
+			position: $position
 		);
 
 		return [

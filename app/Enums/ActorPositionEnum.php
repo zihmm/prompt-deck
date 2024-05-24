@@ -2,8 +2,8 @@
 
 namespace App\Enums;
 
-enum ActorPositionEnum: int
+enum ActorPositionEnum: string
 {
-	case Left = 4;
-	case Right = 5;
+	case Left = 'left';
+	case Right = 'right';
 }

@@ -3,18 +3,19 @@
 namespace App\Http\Controllers;
 
 use App\Services\BattleListService;
+use App\Services\RoundService;
 use Illuminate\View\View;
 
 class QuestController extends Controller
 {
 	public function __construct(
-		protected BattleListService $listService
+		protected RoundService $roundService
 	) { }
 
 	public function index(): View
 	{
 		return view('quest', [
-			'round' => $this->listService->getCurrentRound()
+			'round' => $this->roundService->current()
 		]);
 	}
 }

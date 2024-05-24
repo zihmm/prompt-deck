@@ -2,6 +2,9 @@
 
 namespace App\Providers;
 
+use App\Contracts\Repository as RepositoryContract;
+use App\Repositories\ExcelRepository;
+use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\Blade;
 use Illuminate\Support\ServiceProvider;
 
@@ -12,7 +15,7 @@ class AppServiceProvider extends ServiceProvider
      */
     public function register(): void
     {
-        //
+        App::bind(RepositoryContract::class, ExcelRepository::class);
     }
 
     /**
@@ -20,14 +23,6 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot(): void
     {
-        Blade::directive('svg', function(string $path)
-        {
-	        $svg = new \DOMDocument();
-	        $svg->load(
-		        public_path(str_replace("'", '', $path))
-	        );
-
-	        return $svg->saveXML($svg->documentElement);
-        });
+        //
     }
 }

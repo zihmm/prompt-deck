@@ -2,7 +2,7 @@
 
 namespace App\Exceptions;
 
-class NoRoundsAvailableException extends \Exception
+class NoRoundsAvailableException extends Exception
 {
-
+	//
 }
