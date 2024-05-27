@@ -10,7 +10,7 @@ use Illuminate\Support\Collection;
 interface Repository
 {
 	/**
-	 * Get current round)
+	 * Get current round
 	 *
 	 * @return Round|null
 	 */
