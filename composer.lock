@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "9e563394f538e7d0f801a5feb9a95cfc",
+    "content-hash": "2bc2f698a1da97d86fcf535a250a3768",
     "packages": [
         {
             "name": "brick/math",
@@ -578,6 +578,71 @@
             "time": "2023-10-12T05:21:21+00:00"
         },
         {
+            "name": "graham-campbell/guzzle-factory",
+            "version": "v7.0.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/GrahamCampbell/Guzzle-Factory.git",
+                "reference": "134f6ca38ad0c948ed7c22552a286bb56b5a5b35"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/GrahamCampbell/Guzzle-Factory/zipball/134f6ca38ad0c948ed7c22552a286bb56b5a5b35",
+                "reference": "134f6ca38ad0c948ed7c22552a286bb56b5a5b35",
+                "shasum": ""
+            },
+            "require": {
+                "guzzlehttp/guzzle": "^7.8.1",
+                "guzzlehttp/psr7": "^2.6.2",
+                "php": "^7.4.15 || ^8.0.2"
+            },
+            "require-dev": {
+                "graham-campbell/analyzer": "^4.1",
+                "phpunit/phpunit": "^9.6.14 || ^10.5.1"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "GrahamCampbell\\GuzzleFactory\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Graham Campbell",
+                    "email": "hello@gjcampbell.co.uk",
+                    "homepage": "https://github.com/GrahamCampbell"
+                }
+            ],
+            "description": "Provides A Simple Guzzle Factory With Good Defaults",
+            "keywords": [
+                "Graham Campbell",
+                "GrahamCampbell",
+                "Guzzle",
+                "Guzzle Factory",
+                "Guzzle-Factory",
+                "http"
+            ],
+            "support": {
+                "issues": "https://github.com/GrahamCampbell/Guzzle-Factory/issues",
+                "source": "https://github.com/GrahamCampbell/Guzzle-Factory/tree/v7.0.1"
+            },
+            "funding": [
+                {
+                    "url": "https://github.com/GrahamCampbell",
+                    "type": "github"
+                },
+                {
+                    "url": "https://tidelift.com/funding/github/packagist/graham-campbell/guzzle-factory",
+                    "type": "tidelift"
+                }
+            ],
+            "time": "2023-12-03T20:50:24+00:00"
+        },
+        {
             "name": "graham-campbell/result-type",
             "version": "v1.1.2",
             "source": {
@@ -1049,6 +1114,219 @@
                 }
             ],
             "time": "2023-12-03T19:50:20+00:00"
+        },
+        {
+            "name": "intervention/gif",
+            "version": "4.1.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/Intervention/gif.git",
+                "reference": "3a2b5f8a8856e8877cdab5c47e51aab2d4cb23a3"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/Intervention/gif/zipball/3a2b5f8a8856e8877cdab5c47e51aab2d4cb23a3",
+                "reference": "3a2b5f8a8856e8877cdab5c47e51aab2d4cb23a3",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^8.1"
+            },
+            "require-dev": {
+                "phpstan/phpstan": "^1",
+                "phpunit/phpunit": "^10.0",
+                "slevomat/coding-standard": "~8.0",
+                "squizlabs/php_codesniffer": "^3.8"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Intervention\\Gif\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Oliver Vogel",
+                    "email": "oliver@intervention.io",
+                    "homepage": "https://intervention.io/"
+                }
+            ],
+            "description": "Native PHP GIF Encoder/Decoder",
+            "homepage": "https://github.com/intervention/gif",
+            "keywords": [
+                "animation",
+                "gd",
+                "gif",
+                "image"
+            ],
+            "support": {
+                "issues": "https://github.com/Intervention/gif/issues",
+                "source": "https://github.com/Intervention/gif/tree/4.1.0"
+            },
+            "funding": [
+                {
+                    "url": "https://paypal.me/interventionio",
+                    "type": "custom"
+                },
+                {
+                    "url": "https://github.com/Intervention",
+                    "type": "github"
+                }
+            ],
+            "time": "2024-03-26T17:23:47+00:00"
+        },
+        {
+            "name": "intervention/image",
+            "version": "3.6.4",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/Intervention/image.git",
+                "reference": "193324ec88bc5ad4039e57ce9b926ae28dfde813"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/Intervention/image/zipball/193324ec88bc5ad4039e57ce9b926ae28dfde813",
+                "reference": "193324ec88bc5ad4039e57ce9b926ae28dfde813",
+                "shasum": ""
+            },
+            "require": {
+                "ext-mbstring": "*",
+                "intervention/gif": "^4.1",
+                "php": "^8.1"
+            },
+            "require-dev": {
+                "mockery/mockery": "^1.6",
+                "phpstan/phpstan": "^1",
+                "phpunit/phpunit": "^10.0",
+                "slevomat/coding-standard": "~8.0",
+                "squizlabs/php_codesniffer": "^3.8"
+            },
+            "suggest": {
+                "ext-exif": "Recommended to be able to read EXIF data properly."
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Intervention\\Image\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Oliver Vogel",
+                    "email": "oliver@intervention.io",
+                    "homepage": "https://intervention.io/"
+                }
+            ],
+            "description": "PHP image manipulation",
+            "homepage": "https://image.intervention.io/",
+            "keywords": [
+                "gd",
+                "image",
+                "imagick",
+                "resize",
+                "thumbnail",
+                "watermark"
+            ],
+            "support": {
+                "issues": "https://github.com/Intervention/image/issues",
+                "source": "https://github.com/Intervention/image/tree/3.6.4"
+            },
+            "funding": [
+                {
+                    "url": "https://paypal.me/interventionio",
+                    "type": "custom"
+                },
+                {
+                    "url": "https://github.com/Intervention",
+                    "type": "github"
+                }
+            ],
+            "time": "2024-05-08T13:53:15+00:00"
+        },
+        {
+            "name": "intervention/image-laravel",
+            "version": "1.2.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/Intervention/image-laravel.git",
+                "reference": "d30b62fea3c49896dbf26ea7799e7d718e779310"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/Intervention/image-laravel/zipball/d30b62fea3c49896dbf26ea7799e7d718e779310",
+                "reference": "d30b62fea3c49896dbf26ea7799e7d718e779310",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/support": "^8|^9|^10|^11",
+                "intervention/image": "^3",
+                "php": "^8.1"
+            },
+            "require-dev": {
+                "orchestra/testbench": "^8.18",
+                "phpunit/phpunit": "^10.0"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Intervention\\Image\\Laravel\\ServiceProvider"
+                    ],
+                    "aliases": {
+                        "Image": "Intervention\\Image\\Laravel\\Facades\\Image"
+                    }
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Intervention\\Image\\Laravel\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Oliver Vogel",
+                    "email": "oliver@intervention.io",
+                    "homepage": "https://intervention.io/"
+                }
+            ],
+            "description": "Laravel Integration of Intervention Image",
+            "homepage": "https://image.intervention.io/",
+            "keywords": [
+                "gd",
+                "image",
+                "imagick",
+                "laravel",
+                "resize",
+                "thumbnail",
+                "watermark"
+            ],
+            "support": {
+                "issues": "https://github.com/Intervention/image-laravel/issues",
+                "source": "https://github.com/Intervention/image-laravel/tree/1.2.0"
+            },
+            "funding": [
+                {
+                    "url": "https://paypal.me/interventionio",
+                    "type": "custom"
+                },
+                {
+                    "url": "https://github.com/Intervention",
+                    "type": "github"
+                }
+            ],
+            "time": "2024-03-03T09:14:35+00:00"
         },
         {
             "name": "laravel/framework",
@@ -3415,6 +3693,148 @@
                 }
             ],
             "time": "2024-04-27T21:32:50+00:00"
+        },
+        {
+            "name": "spatie/dropbox-api",
+            "version": "1.22.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/spatie/dropbox-api.git",
+                "reference": "5b012d68568a560d1cd8888c0be2c2805c4b7c65"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/spatie/dropbox-api/zipball/5b012d68568a560d1cd8888c0be2c2805c4b7c65",
+                "reference": "5b012d68568a560d1cd8888c0be2c2805c4b7c65",
+                "shasum": ""
+            },
+            "require": {
+                "ext-json": "*",
+                "graham-campbell/guzzle-factory": "^4.0.2|^5.0|^6.0|^7.0",
+                "guzzlehttp/guzzle": "^6.2|^7.0",
+                "php": "^8.1"
+            },
+            "require-dev": {
+                "laravel/pint": "^1.10.1",
+                "phpstan/phpstan": "^1.10.16",
+                "phpunit/phpunit": "^9.4"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Spatie\\Dropbox\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Alex Vanderbist",
+                    "email": "alex.vanderbist@gmail.com",
+                    "homepage": "https://spatie.be",
+                    "role": "Developer"
+                },
+                {
+                    "name": "Freek Van der Herten",
+                    "email": "freek@spatie.be",
+                    "homepage": "https://spatie.be",
+                    "role": "Developer"
+                }
+            ],
+            "description": "A minimal implementation of Dropbox API v2",
+            "homepage": "https://github.com/spatie/dropbox-api",
+            "keywords": [
+                "Dropbox-API",
+                "api",
+                "dropbox",
+                "spatie",
+                "v2"
+            ],
+            "support": {
+                "issues": "https://github.com/spatie/dropbox-api/issues",
+                "source": "https://github.com/spatie/dropbox-api/tree/1.22.0"
+            },
+            "funding": [
+                {
+                    "url": "https://spatie.be/open-source/support-us",
+                    "type": "custom"
+                },
+                {
+                    "url": "https://github.com/spatie",
+                    "type": "github"
+                }
+            ],
+            "time": "2023-06-08T07:13:00+00:00"
+        },
+        {
+            "name": "spatie/flysystem-dropbox",
+            "version": "3.0.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/spatie/flysystem-dropbox.git",
+                "reference": "766879111204a6e49412b5ff5989a6654e1b8ae0"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/spatie/flysystem-dropbox/zipball/766879111204a6e49412b5ff5989a6654e1b8ae0",
+                "reference": "766879111204a6e49412b5ff5989a6654e1b8ae0",
+                "shasum": ""
+            },
+            "require": {
+                "league/flysystem": "^3.7.0",
+                "php": "^8.0",
+                "spatie/dropbox-api": "^1.17.1"
+            },
+            "require-dev": {
+                "pestphp/pest": "^1.22",
+                "phpspec/prophecy-phpunit": "^2.0.1",
+                "phpunit/phpunit": "^9.5.4"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Spatie\\FlysystemDropbox\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Alex Vanderbist",
+                    "email": "alex.vanderbist@gmail.com",
+                    "homepage": "https://spatie.be",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Flysystem Adapter for the Dropbox v2 API",
+            "homepage": "https://github.com/spatie/flysystem-dropbox",
+            "keywords": [
+                "Flysystem",
+                "api",
+                "dropbox",
+                "flysystem-dropbox",
+                "spatie",
+                "v2"
+            ],
+            "support": {
+                "issues": "https://github.com/spatie/flysystem-dropbox/issues",
+                "source": "https://github.com/spatie/flysystem-dropbox/tree/3.0.1"
+            },
+            "funding": [
+                {
+                    "url": "https://spatie.be/open-source/support-us",
+                    "type": "custom"
+                },
+                {
+                    "url": "https://github.com/spatie",
+                    "type": "github"
+                }
+            ],
+            "time": "2023-07-17T07:48:52+00:00"
         },
         {
             "name": "symfony/clock",

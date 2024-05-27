@@ -41,11 +41,42 @@
                 grid-template-columns: repeat(2, 1fr);
                 grid-gap: 4px;
 
-                height: 60vh;
+                width: 100%;
+                min-height: 60vh;
+            }
 
+            figure
+            {
                 img
                 {
                     width: 100%;
+                }
+
+                .broken-image
+                {
+                    position: relative;
+                    display: flex;
+
+                    flex-direction: column;
+
+                    justify-content: center;
+                    align-items: center;
+
+                    height: 100%;
+                    background: rgba(black, .2);
+
+                    img
+                    {
+                        width: 300px;
+                    }
+
+                    span
+                    {
+                        font-family: get-font-family('quote');
+                        font-size: 20px;
+                        color: get-color('pastel');
+                        margin-top: -5px;
+                    }
                 }
             }
 

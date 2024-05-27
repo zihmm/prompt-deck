@@ -1,3 +1,4 @@
+@php use App\Enums\ActorPositionEnum; @endphp
 @extends('foundation/layout', [
 	'viewName' => 'vote'
 ])
@@ -9,14 +10,14 @@
 	</div>
 	<section id="figures">
 		<div class="figures-container">
-			<figure class="left">
-				<img src="/storage/votes/01/left.webp">
-				<a href="{{ route('vote.post', ['position' => 'left']) }}" class="vote"></a>
-			</figure>
-			<figure class="right">
-				<img src="/storage/votes/01/right.webp">
-				<a href="{{ route('vote.post', ['position' => 'right']) }}" class="vote"></a>
-			</figure>
+			@include('partials/artwork', [
+				'type' => ActorPositionEnum::Left->value,
+				'artwork' => $artworks[ActorPositionEnum::Left->value]
+			])
+			@include('partials/artwork', [
+				'type' => ActorPositionEnum::Right->value,
+				'artwork' => $artworks[ActorPositionEnum::Right->value]
+			])
 		</div>
 	</section>
 @endsection

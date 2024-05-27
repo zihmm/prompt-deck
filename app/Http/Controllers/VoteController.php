@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Enums\ActorPositionEnum;
+use App\Services\ArtworkService;
 use App\Services\RoundService;
 use Illuminate\Http\Request;
 use Illuminate\View\View;
@@ -11,13 +12,18 @@ class VoteController extends Controller
 {
 	public function __construct(
 		protected Request $request,
-		protected RoundService $roundService
+		protected RoundService $roundService,
+		protected ArtworkService $artworkService
 	) { }
 
 	public function index(): View
 	{
 		return view('vote', [
-			'round' => $this->roundService->current()
+			'round' => $this->roundService->current(),
+			'artworks' => [
+				ActorPositionEnum::Left->value => $this->artworkService->render(ActorPositionEnum::Left),
+				ActorPositionEnum::Right->value => $this->artworkService->render(ActorPositionEnum::Right)
+			]
 		]);
 	}
 
