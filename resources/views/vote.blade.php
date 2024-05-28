@@ -8,7 +8,8 @@
 		<div class="label">@lang('round') <span class="red">{{ $round->getName() }}</span></div>
 		<h1>{{ $round->prompt }}</h1>
 	</div>
-	<section id="figures">
+	<section id="figures" class="loading">
+		<div class="loader"></div>
 		<div class="figures-container">
 			@include('partials/artwork', [
 				'type' => ActorPosition::White->value,
@@ -21,3 +22,20 @@
 		</div>
 	</section>
 @endsection
+
+@push('scripts')
+	<script>
+		setTimeout(() =>
+        {
+            document.querySelector('#figures').classList.remove('loading');
+            
+            gsap.from('figure', {
+                y: -100,
+                ease: 'power4.out',
+                duration: 1.8,
+                stagger: 0.1,
+                autoAlpha: 0
+            })
+        }, 1400);
+	</script>
+@endpush

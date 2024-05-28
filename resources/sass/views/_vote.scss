@@ -45,6 +45,11 @@
                 min-height: 60vh;
             }
 
+            .loader
+            {
+                display: none !important;
+            }
+
             figure
             {
                 img
@@ -126,6 +131,22 @@
                     {
                         background-image: url('../icons/accept-white.svg');
                     }
+                }
+            }
+
+            &.loading
+            {
+                align-items: center;
+                height: 100%;
+
+                .loader
+                {
+                    display: block !important;
+                }
+
+                .figures-container
+                {
+                    display: none !important;
                 }
             }
         }

@@ -19,6 +19,8 @@
 			@yield('main')
 		</main>
 	</div>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.3/gsap.min.js"></script>
 	@vite('resources/scripts/app.js')
+	@stack('scripts')
 </body>
 </html>

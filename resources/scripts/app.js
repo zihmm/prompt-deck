@@ -44,6 +44,13 @@ document.querySelectorAll('a.vote').forEach($vote =>
             document.querySelector('#figures').innerHTML = `<p>${response.data.notification}</p>`;
 
             confetti();
+
+            gsap.from('#figures', {
+                autoAlpha: 0,
+                ease: 'power4.out',
+                duration: 1.2,
+                y: 50
+            });
         });
     });
 });
