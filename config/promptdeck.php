@@ -5,8 +5,8 @@ return [
 		'filepath' => storage_path('/app/public/battles.xlsx'),
 
 		'cells' => [
-			'actor_left' => 4,
-			'actor_right' => 5,
+			'actor_white' => 4,
+			'actor_red' => 5,
 			'finished_at' => 6
 		],
 

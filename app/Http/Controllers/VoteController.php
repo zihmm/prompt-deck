@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Enums\ActorPositionEnum;
+use App\Enums\ActorPosition;
 use App\Services\ArtworkService;
 use App\Services\RoundService;
 use Illuminate\Http\Request;
@@ -21,15 +21,15 @@ class VoteController extends Controller
 		return view('vote', [
 			'round' => $this->roundService->current(),
 			'artworks' => [
-				ActorPositionEnum::Left->value => $this->artworkService->render(ActorPositionEnum::Left),
-				ActorPositionEnum::Right->value => $this->artworkService->render(ActorPositionEnum::Right)
+				ActorPosition::White->value  => $this->artworkService->render(ActorPosition::White),
+				ActorPosition::Red->value => $this->artworkService->render(ActorPosition::Red)
 			]
 		]);
 	}
 
 	public function store(): array
 	{
-		$position = ActorPositionEnum::{ucfirst($this->request->get('position'))};
+		$position = ActorPosition::{ucfirst($this->request->get('position'))};
 
 		$this->roundService->finish(
 			round: $this->roundService->current(),

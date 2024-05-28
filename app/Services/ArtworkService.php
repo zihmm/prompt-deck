@@ -2,7 +2,7 @@
 
 namespace App\Services;
 
-use App\Enums\ActorPositionEnum;
+use App\Enums\ActorPosition;
 use Illuminate\Support\Facades\Storage;
 use Intervention\Image\EncodedImage;
 use Intervention\Image\Image;
@@ -14,7 +14,7 @@ class ArtworkService
 		protected RoundService $roundService
 	) { }
 
-	public function render(ActorPositionEnum $positionEnum): ?EncodedImage
+	public function render(ActorPosition $positionEnum): ?EncodedImage
 	{
 		if (($artwork = $this->getFile($positionEnum)))
 		{
@@ -24,10 +24,10 @@ class ArtworkService
 		return null;
 	}
 
-	protected function getFile(ActorPositionEnum $positionEnum): ?Image
+	protected function getFile(ActorPosition $position): ?Image
 	{
 		$files = Storage::disk('dropbox')->files(sprintf("%s/%s",
-			$positionEnum->value,
+			$position->value,
 			$this->roundService->current()->getName()
 		));
 

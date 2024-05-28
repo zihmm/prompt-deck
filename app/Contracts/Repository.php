@@ -3,7 +3,7 @@
 namespace App\Contracts;
 
 use App\Entities\Round;
-use App\Enums\ActorPositionEnum;
+use App\Enums\ActorPosition;
 use Carbon\Carbon;
 use Illuminate\Support\Collection;
 
@@ -20,10 +20,10 @@ interface Repository
 	 * Flag the winner
 	 *
 	 * @param int $roundNr
-	 * @param ActorPositionEnum $position
+	 * @param ActorPosition $position
 	 * @return self
 	 */
-	public function flagWinner(int $roundNr, ActorPositionEnum $position): self;
+	public function flagWinner(int $roundNr, ActorPosition $position): self;
 
 	/**
 	 * Finish / close the cound

@@ -4,7 +4,7 @@ namespace App\Repositories;
 
 use App\Contracts\Repository as Contract;
 use App\Entities\Round;
-use App\Enums\ActorPositionEnum;
+use App\Enums\ActorPosition;
 use Carbon\Carbon;
 use Illuminate\Support\Arr;
 use Illuminate\Support\Collection;
@@ -21,7 +21,7 @@ class ExcelRepository extends Repository implements Contract
 	public function __construct()
 	{
 		$this->spreadsheet = (new XlsReader)->load(
-			config('battle.xls.filepath')
+			config('promptdeck.xls.filepath')
 		);
 
 		$this->worksheet = $this->spreadsheet->getActiveSheet();
@@ -39,7 +39,7 @@ class ExcelRepository extends Repository implements Contract
 	{
 		$current = Arr::first(
 			$this->all()->toArray(),
-			fn($value, int $key) => empty($value[config('battle.xls.index.finished_at')])
+			fn($value, int $key) => empty($value[config('promptdeck.xls.index.finished_at')])
 		);
 
 		if ( ! $current)
@@ -51,8 +51,8 @@ class ExcelRepository extends Repository implements Contract
 			roundNr: $current[0],
 			battleNr: $current[1],
 			prompt: $current[2],
-			actorLeft: $current[3],
-			actorRight: $current[4],
+			actorWhite: $current[3],
+			actorRed: $current[4],
 			isFinal: $this->worksheet->getHighestRow() - 1 == $current[1]
 		);
 	}
@@ -60,16 +60,16 @@ class ExcelRepository extends Repository implements Contract
 	public function store(): void
 	{
 		(new XlsWriter($this->spreadsheet))->save(
-			config('battle.xls.filepath')
+			config('promptdeck.xls.filepath')
 		);
 	}
 
-	public function flagWinner( int $battleNr, ActorPositionEnum $position ): Contract
+	public function flagWinner( int $battleNr, ActorPosition $position ): Contract
 	{
 		$cell = match($position)
 		{
-			ActorPositionEnum::Left => config('battle.xls.cells.actor_left'),
-			ActorPositionEnum::Right => config('battle.xls.cells.actor_right')
+			ActorPosition::White => config('promptdeck.xls.cells.actor_white'),
+			ActorPosition::Red => config('promptdeck.xls.cells.actor_red')
 		};
 
 		$this->worksheet->getStyle([$cell, ($battleNr + 1)])->getFont()->setBold(true);
@@ -80,7 +80,7 @@ class ExcelRepository extends Repository implements Contract
 	public function finishedAt( int $battleNr, Carbon $date): Contract
 	{
 		$this->worksheet->setCellValue(
-			[config('battle.xls.cells.finished_at'), ($battleNr + 1)],
+			[config('promptdeck.xls.cells.finished_at'), ($battleNr + 1)],
 			$date
 		);
 

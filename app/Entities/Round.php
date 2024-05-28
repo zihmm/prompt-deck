@@ -8,8 +8,8 @@ class Round
 		public int $roundNr,
 		public int $battleNr,
 		public string $prompt,
-		public string $actorLeft = '',
-		public string $actorRight = '',
+		public string $actorWhite = '',
+		public string $actorRed = '',
 		public bool $isFinal = false
 	) { }
 
