@@ -16,14 +16,7 @@ class RoundService
 
 	public function current(): Round
 	{
-		if ( ! ($round = $this->dataRepository->getCurrentRound()))
-		{
-			throw new NoRoundsAvailableException(
-				__('no_more_rounds_available')
-			);
-		}
-
-		return $round;
+		return $this->dataRepository->getCurrentRound();
 	}
 
 	public function finish(Round $round, ActorPosition $position): void

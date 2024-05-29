@@ -2,7 +2,9 @@
 
 namespace App\Exceptions;
 
-class NoRoundsAvailableException extends Exception
+use App\Contracts\RenderableException;
+
+class NoRoundsAvailableException extends Exception implements RenderableException
 {
 	//
 }

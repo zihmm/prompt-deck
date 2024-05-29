@@ -5,6 +5,7 @@ namespace App\Repositories;
 use App\Contracts\Repository as Contract;
 use App\Entities\Round;
 use App\Enums\ActorPosition;
+use App\Exceptions\NoActorsAvailableException;
 use Carbon\Carbon;
 use Illuminate\Support\Arr;
 use Illuminate\Support\Collection;
@@ -42,9 +43,20 @@ class ExcelRepository extends Repository implements Contract
 			fn($value, int $key) => empty($value[config('promptdeck.xls.index.finished_at')])
 		);
 
+		// No round available
 		if ( ! $current)
 		{
-			return null;
+			throw new NoActorsAvailableException(
+				__('no_more_rounds_available')
+			);
+		}
+
+		// Check if actors are available
+		if (empty($current[3]) || empty($current[4]))
+		{
+			throw new NoActorsAvailableException(
+				__('no_actors_available')
+			);
 		}
 
 		return new Round(

@@ -1,5 +1,6 @@
 <?php
 
+use App\Contracts\RenderableException;
 use App\Exceptions\NoRoundsAvailableException;
 use Illuminate\Foundation\Application;
 use Illuminate\Foundation\Configuration\Exceptions;
@@ -17,7 +18,7 @@ return Application::configure(basePath: dirname(__DIR__))
     })
     ->withExceptions(function (Exceptions $exceptions)
     {
-        $exceptions->render(function(NoRoundsAvailableException $exception)
+        $exceptions->render(function(RenderableException $exception)
         {
 	        return response()->view('errors/204', ['message' => $exception->getMessage()], 404);
         });
