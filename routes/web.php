@@ -4,6 +4,7 @@ use App\Http\Controllers\QuestController;
 use App\Http\Controllers\VoteController;
 use Illuminate\Support\Facades\Route;
 
+Route::get('/welcome', fn() => view('welcome'));
 Route::get('/', [QuestController::class, 'index']);
 
 Route::get('/vote', [VoteController::class, 'index']);
