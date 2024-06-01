@@ -26,7 +26,7 @@ interface Repository
 	public function flagWinner(int $roundNr, ActorPosition $position): self;
 
 	/**
-	 * Finish / close the cound
+	 * Finish / close the round
 	 *
 	 * @param int $roundNr
 	 * @param Carbon $date
