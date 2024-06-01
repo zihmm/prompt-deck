@@ -45,3 +45,18 @@ If you like to define your own column structure, you can configure the relevant 
 
 ## Artwork file storage
 In the root folder of your Dropbox app, create the actor folders named "white" and "red". In it, create subfolders with a leading zero numeration of your battle rounds (e.g. 01, 02, 03, ...).
+
+
+<pre>
+prompd-deck/<br>
+|_ white/<br>
+   |_ 01/<br>
+   |_ 02/ <br>
+   |_ .. <br>
+   |_ final/ <br>
+|_ red/<br>
+   |_ 01/<br>
+   |_ 02/ <br>
+   |_ .. <br>
+   |_ final/ <br>
+</pre>
