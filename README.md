@@ -1,6 +1,4 @@
-# PromptDeck: Simple web-app to run prompt battles
-
----
+# PromptDeck – A simple web-app to run prompt battles
 PromptDeck is an easy-to-use, simple and flexible solution to run your own image-based prompt battle events with a crystal clear, beautiful UI.
 
 It uses a simple XLSX-file (Excel) for round based informations and Dropbox API for file storage.
@@ -9,9 +7,6 @@ It uses a simple XLSX-file (Excel) for round based informations and Dropbox API 
 *Image vote screen*
 
 ## How to set up
-
----
-
 1. Make sure you fulfill the Laravel 11 Framework [server requirements](https://laravel.com/docs/11.x/deployment#server-requirements)
 2. Generate your authorisation token in the [App Console](https://www.dropbox.com/developers/apps). Read the [Dropbox Developer Blog](https://dropbox.tech/developers/generate-an-access-token-for-your-own-account) to see how to get yours.
 3. Set your API key in .env `DROPBOX_AUTHORIZATION_TOKEN`
@@ -20,8 +15,6 @@ It uses a simple XLSX-file (Excel) for round based informations and Dropbox API 
 5. You're good to go
 
 ## How it works
-
----
 It's build to run with two counterparts for each round. After each round, the winner is marked in the battle list and the next round will start.
 
 1. Display a prompt-quest to the actors
@@ -32,8 +25,6 @@ It's build to run with two counterparts for each round. After each round, the wi
 5. Start the next round
 
 ## Datasource
-
----
 The data source is set up on a XLSX-file (Excel), because all in our tem can handle it (instead of a database). You're totaly free to implement your own data source. It's implemented using a very simple repository pattern. Yout just need to implement the `App\Contracts\Repository` interface to build your own.
 
 #### XLSX structure
@@ -53,6 +44,4 @@ Find the example file under `storage/app/public/battles.xlsx`. After each round 
 If you like to define your own column structure, you can configure the relevant column settings in `config/promptdeck.php`
 
 ## Artwork file storage
-
----
 In the root folder of your Dropbox app, create the actor folders named "white" and "red". In it, create subfolders with a leading zero numeration of your battle rounds (e.g. 01, 02, 03, ...).
