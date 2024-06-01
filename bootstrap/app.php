@@ -20,6 +20,8 @@ return Application::configure(basePath: dirname(__DIR__))
     {
         $exceptions->render(function(RenderableException $exception)
         {
-	        return response()->view('errors/204', ['message' => $exception->getMessage()], 404);
+	        return response()->view('errors/404', [
+				'message' => $exception->getMessage()],
+	        404);
         });
     })->create();
