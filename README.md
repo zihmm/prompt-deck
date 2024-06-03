@@ -25,7 +25,7 @@ It's build to run with two counterparts for each round. After each round, the wi
 5. Start the next round
 
 ## Datasource
-The data source is set up on a XLSX-file (Excel), because all in our tem can handle it (instead of a database). You're totaly free to implement your own data source. It's implemented using a very simple repository pattern. Yout just need to implement the `App\Contracts\Repository` interface to build your own.
+The data source is set up on a XLSX-file (Excel), because all in our team can handle it (instead of a database). You're totally free to implement your own data source. It's implemented using a very simple repository pattern. Yout just need to implement the `App\Contracts\Repository` interface to build your own.
 
 #### XLSX structure
 
