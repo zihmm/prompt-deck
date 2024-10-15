@@ -26,7 +26,7 @@ class ArtworkService
 
 	protected function getFile(ActorPosition $position): ?Image
 	{
-		$files = Storage::disk('dropbox')->files(sprintf("%s/%s",
+		$files = Storage::disk('dropbox')->files(sprintf("%s/%s/",
 			$position->value,
 			$this->roundService->current()->getName()
 		));

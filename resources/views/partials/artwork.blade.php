@@ -1,6 +1,9 @@
 <figure class="{{ $type }}">
 	@if($artwork)
 		<img src="{{ $artwork->toDataUri() }}">
+		<div class="prompt-card">
+			<p>{{ $prompt }}</p>
+		</div>
 		<a href="{{ route('vote.post', ['position' => $type]) }}" class="vote {{ $type }}"></a>
 	@else
 		<div class="broken-image">

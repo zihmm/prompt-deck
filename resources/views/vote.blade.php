@@ -13,11 +13,13 @@
 		<div class="figures-container">
 			@include('partials/artwork', [
 				'type' => ActorPosition::White->value,
-				'artwork' => $artworks[ActorPosition::White->value]
+				'artwork' => $artworks[ActorPosition::White->value],
+				'prompt' => $prompts[ActorPosition::White->value]
 			])
 			@include('partials/artwork', [
 				'type' => ActorPosition::Red->value,
-				'artwork' => $artworks[ActorPosition::Red->value]
+				'artwork' => $artworks[ActorPosition::Red->value],
+				'prompt' => $prompts[ActorPosition::Red->value]
 			])
 		</div>
 	</section>
