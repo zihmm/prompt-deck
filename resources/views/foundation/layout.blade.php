@@ -20,6 +20,9 @@
 		</main>
 	</div>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.3/gsap.min.js"></script>
+	<script>
+		let countdown_timer = {{ config('promptdeck.countdown_timer') }};
+	</script>
 	@vite('resources/scripts/app.js')
 	@stack('scripts')
 </body>

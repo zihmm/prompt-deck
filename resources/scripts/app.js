@@ -14,7 +14,7 @@ if (document.querySelector('#start-countdown'))
 
         // Start countdown
         let countdown = new Countdown(document.querySelector('#countdown'), {
-            date: new Date().getTime() + 61000,
+            date: new Date().getTime() + (countdown_timer * 1000) + 1000,
             // date: new Date().getTime() + 300,
             labels: {
                 minutes: 'Minuten',
@@ -52,5 +52,18 @@ document.querySelectorAll('a.vote').forEach($vote =>
                 y: 50
             });
         });
+    });
+});
+
+document.querySelectorAll('figure').forEach(figure =>
+{
+    figure.addEventListener('mouseover', ev =>
+    {
+        // gsap.from('.prompt-card', {
+        //     autoAlpha: 0,
+        //     ease: 'power4.out',
+        //     duration: 1.2,
+        //     y: 100
+        // });
     });
 });
