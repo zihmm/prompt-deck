@@ -11,5 +11,8 @@
 		</button>
 		<div id="countdown"></div>
 		<a href="/vote" class="done hide">@lang('time_out') →</a>
+		<div class="loader-container" style="visibility: hidden">
+			<div class="loader" ></div>
+		</div>
 	</div>
 @endsection

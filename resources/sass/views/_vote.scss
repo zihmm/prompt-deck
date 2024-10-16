@@ -39,7 +39,7 @@
             {
                 display: grid;
                 grid-template-columns: repeat(2, 1fr);
-                grid-gap: 4px;
+                grid-gap: 10px;
 
                 width: 100%;
                 min-height: 60vh;
@@ -48,81 +48,6 @@
             .loader
             {
                 display: none !important;
-            }
-
-            figure
-            {
-                overflow: hidden;
-
-                img
-                {
-                    width: 100%;
-                }
-
-                .prompt-card
-                {
-                    position: absolute;
-                    display: flex;
-
-                    justify-content: center;
-                    align-items: center;
-
-                    font-family: get-font-family('quote');
-
-                    font-size: 1.5vw;
-                    line-height: 140%;
-
-                    padding: 80px !important;
-
-                    transition: top 200ms;
-                    color: white;
-                    top: 0;
-                    left: 0;
-
-                    width: 100%;
-                    height: 100%;
-
-                    top: -100%;
-
-                    background-color: rgba(black, .7);
-
-                    z-index: 5;
-                }
-
-                .broken-image
-                {
-                    position: relative;
-                    display: flex;
-
-                    flex-direction: column;
-
-                    justify-content: center;
-                    align-items: center;
-
-                    height: 100%;
-                    background: rgba(black, .2);
-
-                    img
-                    {
-                        width: 300px;
-                    }
-
-                    span
-                    {
-                        font-family: get-font-family('quote');
-                        font-size: 20px;
-                        color: get-color('pastel');
-                        margin-top: -5px;
-                    }
-                }
-
-                &:hover
-                {
-                    .prompt-card
-                    {
-                        top: 0;
-                    }
-                }
             }
 
             a.vote
@@ -153,7 +78,7 @@
                     background-position: center center;
                     background-image: url('../icons/accept-green.svg');
 
-                    border: 1px solid darken(get-color('grey'), 15);
+                    //border: 1px solid darken(get-color('grey'), 15);
 
                     transform: scale(1.2);
                 }

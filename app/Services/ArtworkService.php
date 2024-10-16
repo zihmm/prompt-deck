@@ -31,14 +31,16 @@ class ArtworkService
 			$this->roundService->current()->getName()
 		));
 
+		$artworks = array_filter($files, fn($file) => pathinfo($file, PATHINFO_EXTENSION) === 'webp');
+
 		// No file found
-		if (count($files) === 0)
+		if (count($artworks) === 0)
 		{
 			return null;
 		}
 
 		return ImageFacade::read(
-			Storage::disk('dropbox')->readStream($files[0])
+			Storage::disk('dropbox')->readStream($artworks[0])
 		)->cover(
 			width: 1024,
 			height: 1024

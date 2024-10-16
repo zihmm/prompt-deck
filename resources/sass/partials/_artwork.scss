@@ -1,0 +1,151 @@
+figure.artwork
+{
+    overflow: hidden;
+
+    img
+    {
+        width: 100%;
+    }
+
+    // With prompts
+    .card-wrapper
+    {
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        width: 100%;
+        height: 100%;
+
+        margin-right: 10px;
+        cursor: pointer;
+        -webkit-font-smoothing: antialiased;
+
+        .card
+        {
+            position: relative;
+            display: block;
+
+            height: 100%;
+            width: 100%;
+        }
+
+        .face
+        {
+            position: absolute;
+            display: flex;
+
+            justify-content: center;
+            align-items: center;
+
+            top: 0;
+            left: 0;
+
+            width: 100%;
+            height: inherit;
+
+            overflow: hidden;
+        }
+
+        .face.front
+        {
+            background-color: pink !important;
+        }
+
+        .face.prompt
+        {
+            position: relative;
+            display: flex;
+
+            justify-content: center;
+            align-items: center;
+
+            background-color: white;
+            padding: 60px;
+
+            span
+            {
+                color: get-color('background');
+
+                font-size: 3vh;
+                font-family: get-font-family('serif');
+
+                line-height: 150%;
+
+                -webkit-user-select: none;
+                -ms-user-select: none;
+                user-select: none;
+
+                &:first-letter
+                {
+                    text-transform: uppercase;
+                }
+            }
+
+            .close-prompt
+            {
+                position: absolute;
+                display: block;
+
+                top: 25px;
+                right: 25px;
+
+                z-index: 100;
+
+                svg
+                {
+                    fill: darken(get-color('grey'), 5);
+                }
+
+                &:hover
+                {
+                    svg
+                    {
+                        fill: get-color('background');
+                    }
+                }
+            }
+        }
+
+        &.flipped
+        {
+            .image a.vote
+            {
+                pointer-events: none;
+            }
+        }
+    }
+
+    .broken-image
+    {
+        position: relative;
+        display: flex;
+
+        flex-direction: column;
+
+        justify-content: center;
+        align-items: center;
+
+        height: 100%;
+        background: rgba(black, .2);
+
+        img
+        {
+            width: 300px;
+        }
+
+        span
+        {
+            font-family: get-font-family('quote');
+            font-size: 20px;
+            color: get-color('pastel');
+            margin-top: -5px;
+        }
+    }
+
+    &.with-prompt
+    {
+        overflow: visible !important;
+    }
+}

@@ -1,6 +1,7 @@
 import './bootstrap';
 import Countdown from "./vendor/countdown.js";
 import confetti from "./modules/confetti.js";
+import { prompt } from "./modules/prompt";
 
 // Countdown
 if (document.querySelector('#start-countdown'))
@@ -31,6 +32,28 @@ if (document.querySelector('#start-countdown'))
     })
 }
 
+// Done
+document.querySelectorAll('a.done').forEach($done =>
+{
+    $done.addEventListener('click', ev =>
+    {
+        ev.target.classList.add('hide');
+
+        setTimeout(() =>
+        {
+            gsap.from(document.querySelector('.loader-container'), {
+                autoAlpha: 0,
+                y: -30,
+                duration: 0.3,
+                ease: 'linear',
+            });
+        }, 200);
+
+
+        //document.querySelector('.loader').classList.remove('hide');
+    })
+})
+
 // Vote
 document.querySelectorAll('a.vote').forEach($vote =>
 {
@@ -55,15 +78,8 @@ document.querySelectorAll('a.vote').forEach($vote =>
     });
 });
 
-document.querySelectorAll('figure').forEach(figure =>
+//
+if (document.querySelectorAll('.with-prompt-cards').length > 0)
 {
-    figure.addEventListener('mouseover', ev =>
-    {
-        // gsap.from('.prompt-card', {
-        //     autoAlpha: 0,
-        //     ease: 'power4.out',
-        //     duration: 1.2,
-        //     y: 100
-        // });
-    });
-});
+    prompt().init();
+}

@@ -9,8 +9,7 @@
 		<h1>{{ $round->prompt }}</h1>
 	</div>
 	<section id="figures" class="loading">
-		<div class="loader"></div>
-		<div class="figures-container">
+		<div class="figures-container @if(config('promptdeck.show_prompts')) with-prompt-cards @endif">
 			@include('partials/artwork', [
 				'type' => ActorPosition::White->value,
 				'artwork' => $artworks[ActorPosition::White->value],
@@ -38,6 +37,6 @@
                 stagger: 0.1,
                 autoAlpha: 0
             })
-        }, 1400);
+        }, 800);
 	</script>
 @endpush
