@@ -1,7 +1,7 @@
 <?php
 
 return [
-	'countdown_timer' => 90,
+	'countdown_timer' => 60,
 	'show_prompts' => true,
 
 	'xls' => [
