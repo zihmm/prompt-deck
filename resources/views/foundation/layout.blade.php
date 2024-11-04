@@ -12,7 +12,7 @@
 <body>
 	<div id="app" data-view="{{ $viewName }}">
 		<a href="{{ url('/') }}" id="logo">
-			<img src="{{ asset('/images/yth-logo.svg') }}" width="250">
+			<img src="{{ asset('/images/logo.svg') }}" width="180">
 		</a>
 		<main>
 			@yield('main')
