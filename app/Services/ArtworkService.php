@@ -39,8 +39,10 @@ class ArtworkService
 			return null;
 		}
 
+		$artworks = array_values($artworks)[0];
+
 		return ImageFacade::read(
-			Storage::disk('dropbox')->readStream($artworks[0])
+			Storage::disk('dropbox')->readStream($artworks)
 		)->cover(
 			width: 1024,
 			height: 1024
